@@ -53,7 +53,7 @@
     "domain": "Dominio"
   },
   "views": {
-    "eyebrow": "Cuatro vistas",
+    "eyebrow": "Cinco vistas",
     "title": "Las mismas tareas, distintos ángulos",
     "lead": "Activa solo las pestañas que necesitas. Arrastra una tarea en el kanban y su estado cambia en la lista y su color en el calendario.",
     "calendar": "Un mes con los nombres de las tareas dentro de los días. Toca un día y abajo verás su agenda.",
@@ -61,7 +61,11 @@
     "kanban": "Columnas propias para cada proyecto, con tarjetas que arrastras entre ellas.",
     "graph": "Grafo",
     "graphText": "Las tareas enlazadas forman una red: ves qué depende de qué y dónde se atascó la cadena.",
-    "graphAlt": "Grafo de tareas enlazadas"
+    "graphAlt": "Grafo de tareas enlazadas",
+    "goals": "Objetivos",
+    "goalsText": "Enlaza tareas y se convierten solas en un objetivo. El mapa de metro muestra las ramas que van en paralelo y dónde se unen antes de la meta. De arriba abajo en el móvil, de izquierda a derecha en el Mac.",
+    "goalsAlt": "Mapa de metro de un objetivo con ramas",
+    "goalExample": "Lanzar la landing"
   },
   "ai": {
     "eyebrow": "IA en el dispositivo",
@@ -70,7 +74,7 @@
     "p1t": "Chat con modo de tareas.",
     "p1": "El asistente propone una lista, marcas las que quieres y las creas con un botón.",
     "p2t": "Las rutinas se enlazan solas.",
-    "p2": "Los pasos de un plan se enlazan en orden y aparecen como una cadena en el grafo.",
+    "p2": "Los pasos de un plan se enlazan en orden y se convierten al instante en un objetivo con mapa de ruta.",
     "p3t": "Entiende el tiempo.",
     "p3": "«De una a cinco», «el viernes», «recuérdamelo a las 9:30» se convierten en fechas y avisos exactos.",
     "p4t": "Por voz.",

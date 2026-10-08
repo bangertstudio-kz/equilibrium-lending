@@ -53,7 +53,7 @@
     "domain": "Domínio"
   },
   "views": {
-    "eyebrow": "Quatro vistas",
+    "eyebrow": "Cinco vistas",
     "title": "As mesmas tarefas, ângulos diferentes",
     "lead": "Ative só os separadores de que precisa. Arraste uma tarefa no kanban e o estado muda na lista e a cor no calendário.",
     "calendar": "Um mês com os nomes das tarefas dentro dos dias. Toque num dia para ver a agenda em baixo.",
@@ -61,7 +61,11 @@
     "kanban": "Colunas próprias para cada projeto, com cartões que arrasta entre elas.",
     "graph": "Grafo",
     "graphText": "As tarefas ligadas formam uma rede: vê o que depende de quê e onde a cadeia parou.",
-    "graphAlt": "Grafo de tarefas ligadas"
+    "graphAlt": "Grafo de tarefas ligadas",
+    "goals": "Objetivos",
+    "goalsText": "Ligue tarefas e elas tornam-se um objetivo sozinhas. O mapa de metro mostra os ramos que correm em paralelo e onde se juntam antes da meta. De cima para baixo no telemóvel, da esquerda para a direita no Mac.",
+    "goalsAlt": "Mapa de metro de um objetivo com ramos",
+    "goalExample": "Lançar a landing page"
   },
   "ai": {
     "eyebrow": "IA no dispositivo",
@@ -70,7 +74,7 @@
     "p1t": "Chat com modo de tarefas.",
     "p1": "O assistente propõe uma lista, marca as que quer e cria-as com um botão.",
     "p2t": "As rotinas ligam-se sozinhas.",
-    "p2": "Os passos de um plano ficam ligados por ordem e aparecem como uma cadeia no grafo.",
+    "p2": "Os passos de um plano ficam ligados por ordem e tornam-se logo um objetivo com mapa do percurso.",
     "p3t": "Percebe o tempo.",
     "p3": "«Da uma às cinco», «na sexta», «lembra-me às 9:30» tornam-se datas e notificações exatas.",
     "p4t": "Por voz.",

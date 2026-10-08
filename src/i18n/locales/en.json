@@ -53,7 +53,7 @@
     "domain": "Domain"
   },
   "views": {
-    "eyebrow": "Four views",
+    "eyebrow": "Five views",
     "title": "The same tasks from different angles",
     "lead": "Turn on only the tabs you need. Drag a task on the kanban, and its status changes in the list and its color in the calendar.",
     "calendar": "A month with task names right in the days. Tap a day to see its schedule below.",
@@ -61,7 +61,11 @@
     "kanban": "Your own columns for every project, with cards you drag between them.",
     "graph": "Graph",
     "graphText": "Linked tasks form a network: you see what depends on what and where a chain is stuck.",
-    "graphAlt": "Graph of linked tasks"
+    "graphAlt": "Graph of linked tasks",
+    "goals": "Goals",
+    "goalsText": "Link tasks and they become a goal on their own. The metro map shows branches that run in parallel and where they meet before the finish. Top to bottom on the phone, left to right on the Mac.",
+    "goalsAlt": "Metro map of a goal with branches",
+    "goalExample": "Launch the landing"
   },
   "ai": {
     "eyebrow": "On-device AI",
@@ -70,7 +74,7 @@
     "p1t": "Chat with a task mode.",
     "p1": "The assistant proposes a list, you tick the ones you want and create them with one button.",
     "p2t": "Routines link themselves.",
-    "p2": "Steps of one plan are linked in order and show up as a chain in the graph.",
+    "p2": "Steps of one plan are linked in order and instantly become a goal with a route map.",
     "p3t": "It understands time.",
     "p3": "“From one to five”, “on Friday”, “remind me at 9:30” become exact dates and notifications.",
     "p4t": "By voice.",
