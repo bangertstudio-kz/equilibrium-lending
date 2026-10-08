@@ -68,6 +68,12 @@ function meowify(node: unknown): unknown {
 
 const messages: Record<Locale, unknown> = { ru, en, kk, pt, es, meow: meowify(en) };
 
+/** Formats a date in the page's language; the cat page gets cat words. */
+export function formatDate(locale: Locale, date: Date, options: Intl.DateTimeFormatOptions): string {
+  const text = new Intl.DateTimeFormat(intlLocale(locale), options).format(date);
+  return locale === 'meow' ? (meowify(text) as string) : text;
+}
+
 /**
  * The only place a page path is built, so canonical, hreflang and links
  * agree. `page` is '' for home, '/privacy', '/support'.

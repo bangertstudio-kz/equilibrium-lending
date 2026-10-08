@@ -1,7 +1,7 @@
 ---
 import Layout from './Layout.astro';
 import TaskTile from './TaskTile.astro';
-import { useT, type Locale } from '../i18n';
+import { formatDate, useT, type Locale } from '../i18n';
 import { links } from '../links';
 
 interface Props { locale: Locale }
@@ -53,6 +53,18 @@ const metroEdges = metroLinks.map(([a, b]) => {
 const metroStations = Object.entries(ST).map(([key, v]) => ({
   key, x: v.x, y: v.y, color: v.s.color, done: v.s === done, finish: 'finish' in v,
 }));
+// Timeline card: the week of 5–11 October 2026 (Monday first), today is the 8th.
+const weekDays = Array.from({ length: 7 }, (_, i) => new Date(2026, 9, 5 + i));
+// Bars per lane, already packed into rows; from/to are day columns (1-based, end exclusive).
+const timelineLanes = [
+  { title: t('views.goalExample'), color: 'var(--accent)', rows: [
+    [{ k: 'copy', s: done, from: 1, to: 3 }, { k: 'screens', s: progress, from: 3, to: 5 }, { k: 'release', s: todo, from: 6, to: 8 }],
+    [{ k: 'design', s: done, from: 1, to: 3 }, { k: 'domain', s: done, from: 3, to: 4 }, { k: 'review', s: todo, from: 5, to: 6 }],
+  ] },
+  { title: t('views.timelineNoGoal'), color: null, rows: [
+    [{ k: 'gym', s: todo, from: 2, to: 3 }, { k: 'report', s: progress, from: 4, to: 6, drag: true }, { k: 'payRent', s: done, from: 7, to: 8 }],
+  ] },
+];
 const mcpCommand = 'claude mcp add --transport http equilibrium http://127.0.0.1:4433/mcp';
 const mcpTools = ['list_projects', 'list_tasks', 'create_tasks', 'update_task', 'create_status', 'delete_tasks'];
 ---
@@ -195,6 +207,37 @@ const mcpTools = ['list_projects', 'list_tasks', 'create_tasks', 'update_task', 
             </div>
             <h3>{t('views.goals')}</h3>
             <p>{t('views.goalsText')}</p>
+          </article>
+
+          <article class="view wide" data-reveal style="--i: 5">
+            <div class="art timeline" role="img" aria-label={t('views.timelineAlt')}>
+              <div class="tl-grid">
+                <div class="tl-days">
+                  {weekDays.map((d) => <span class:list={{ today: d.getDate() === 8 }}>{formatDate(locale, d, { weekday: 'short', day: 'numeric' })}</span>)}
+                </div>
+                {timelineLanes.map((lane) => (
+                  <div class="tl-lane">
+                    <b class="tl-title">{lane.color && <span style={`background:${lane.color}`}></span>}{lane.title}</b>
+                    {lane.rows.map((row) => (
+                      <div class="tl-row">
+                        {row.map((bar) => (
+                          <>
+                            {bar.drag && <i class="tl-ghost" style={`grid-column:${bar.from - 1} / ${bar.to - 1}`}></i>}
+                            <em class:list={['tl-bar', { drag: bar.drag, done: bar.s === done }]} style={`grid-column:${bar.from} / ${bar.to}; --c:${bar.s.color}`}>
+                              {t(`tasks.${bar.k}`)}
+                              {bar.drag && <u class="tl-handle"></u>}
+                            </em>
+                          </>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+                <i class="tl-now" style="--day: 3.45"></i>
+              </div>
+            </div>
+            <h3>{t('views.timeline')}</h3>
+            <p>{t('views.timelineText')}</p>
           </article>
         </div>
       </section>
@@ -447,6 +490,29 @@ const mcpTools = ['list_projects', 'list_tasks', 'create_tasks', 'update_task', 
 .art.goal svg { width: 100%; min-width: 520px; height: auto; overflow: visible; }
 .goal-label { font-family: var(--font); font-size: 12.5px; font-weight: 600; fill: var(--fg); }
 .graph svg { width: 100%; height: 100%; }
+/* Timeline card: seven day columns; scrolls rather than shrinks on phones. */
+.art.timeline { height: auto; padding: 12px 16px 14px; overflow-x: auto; }
+.tl-grid { position: relative; min-width: 560px; display: grid; gap: 10px;
+  background: repeating-linear-gradient(90deg, transparent 0 calc(100% / 7 - 1px), var(--soft) calc(100% / 7 - 1px) calc(100% / 7)); }
+.tl-days, .tl-row { display: grid; grid-template-columns: repeat(7, 1fr); column-gap: 4px; }
+.tl-days span { font-size: 11.5px; font-weight: 600; opacity: 0.6; padding-left: 6px; text-transform: capitalize; }
+.tl-days span.today { color: var(--accent); opacity: 1; font-weight: 800; }
+.tl-lane { display: grid; gap: 5px; }
+.tl-title { display: flex; align-items: center; gap: 7px; font-size: 12.5px; }
+.tl-title span { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.tl-row { grid-auto-flow: dense; }
+.tl-bar {
+  grid-row: 1; position: relative; font-style: normal; font-size: 12px; font-weight: 600; color: var(--fg);
+  padding: 6px 9px; border-radius: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  background: color-mix(in srgb, var(--c) 22%, var(--card)); border: 1.5px solid color-mix(in srgb, var(--c) 65%, transparent);
+}
+.tl-bar.done { opacity: 0.55; text-decoration: line-through; }
+.tl-bar.drag { border-color: var(--c); box-shadow: 0 8px 18px rgb(0 0 0 / 0.18); z-index: 1; animation: tl-drag 3.2s ease-in-out infinite; }
+.tl-ghost { grid-row: 1; border: 1.5px dashed var(--c, currentColor); border-radius: 9px; opacity: 0.35; }
+.tl-handle { position: absolute; right: 3px; top: 50%; width: 3px; height: 14px; margin-top: -7px; border-radius: 2px; background: var(--c); }
+.tl-now { position: absolute; top: 0; bottom: 0; left: calc(100% / 7 * var(--day)); width: 2px; background: #e5484d; border-radius: 1px; }
+@keyframes tl-drag { 0%, 15% { translate: -52% 0; } 45%, 100% { translate: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .tl-bar.drag { animation: none; } }
 
 /* Split sections */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }

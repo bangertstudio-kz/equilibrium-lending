@@ -53,7 +53,7 @@
     "domain": "Domain"
   },
   "views": {
-    "eyebrow": "Five views",
+    "eyebrow": "Six views",
     "title": "The same tasks from different angles",
     "lead": "Turn on only the tabs you need. Drag a task on the kanban, and its status changes in the list and its color in the calendar.",
     "calendar": "A month with task names right in the days. Tap a day to see its schedule below.",
@@ -65,7 +65,11 @@
     "goals": "Goals",
     "goalsText": "Link tasks and they become a goal on their own. The metro map shows branches that run in parallel and where they meet before the finish. Top to bottom on the phone, left to right on the Mac.",
     "goalsAlt": "Metro map of a goal with branches",
-    "goalExample": "Launch the landing"
+    "goalExample": "Launch the landing",
+    "timeline": "Timeline",
+    "timelineText": "Tasks as bars on a time axis, in lanes by goal, status, priority or project. Drag a bar to move a task, or its edge to stretch the deadline. Pinch to zoom from hours to a month.",
+    "timelineAlt": "A week timeline with tasks in goal lanes",
+    "timelineNoGoal": "No goal"
   },
   "ai": {
     "eyebrow": "On-device AI",

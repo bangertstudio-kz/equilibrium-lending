@@ -53,7 +53,7 @@
     "domain": "Dominio"
   },
   "views": {
-    "eyebrow": "Cinco vistas",
+    "eyebrow": "Seis vistas",
     "title": "Las mismas tareas, distintos ángulos",
     "lead": "Activa solo las pestañas que necesitas. Arrastra una tarea en el kanban y su estado cambia en la lista y su color en el calendario.",
     "calendar": "Un mes con los nombres de las tareas dentro de los días. Toca un día y abajo verás su agenda.",
@@ -65,7 +65,11 @@
     "goals": "Objetivos",
     "goalsText": "Enlaza tareas y se convierten solas en un objetivo. El mapa de metro muestra las ramas que van en paralelo y dónde se unen antes de la meta. De arriba abajo en el móvil, de izquierda a derecha en el Mac.",
     "goalsAlt": "Mapa de metro de un objetivo con ramas",
-    "goalExample": "Lanzar la landing"
+    "goalExample": "Lanzar la landing",
+    "timeline": "Línea de tiempo",
+    "timelineText": "Tareas como barras en un eje de tiempo, en carriles por objetivo, estado, prioridad o proyecto. Arrastra una barra para mover la tarea, o su borde para alargar el plazo. Pellizca para pasar de horas a un mes.",
+    "timelineAlt": "Línea de tiempo de una semana con tareas en carriles por objetivo",
+    "timelineNoGoal": "Sin objetivo"
   },
   "ai": {
     "eyebrow": "IA en el dispositivo",

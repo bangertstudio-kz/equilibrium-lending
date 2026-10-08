@@ -1,6 +1,6 @@
 ---
 import DocPage from './DocPage.astro';
-import { intlLocale, messagesFor, pathFor, type Locale } from '../i18n';
+import { formatDate, messagesFor, pathFor, type Locale } from '../i18n';
 import { links } from '../links';
 
 interface Props { locale: Locale }
@@ -9,7 +9,7 @@ const m = messagesFor(locale).privacyPolicy;
 
 /** Date of the current wording; bump it whenever the text changes. */
 const UPDATED = new Date(2026, 9, 8);
-const updated = m.updated.replace('{date}', new Intl.DateTimeFormat(intlLocale(locale), { dateStyle: 'long' }).format(UPDATED));
+const updated = m.updated.replace('{date}', formatDate(locale, UPDATED, { dateStyle: 'long' }));
 
 /** Splits "… {email} …" so the address renders as a link. */
 const withEmail = (text: string) => text.split('{email}');
