@@ -221,6 +221,12 @@
         ]
       },
       {
+        "h": "This website",
+        "p": [
+          "This website uses Yandex Metrica to count visits and understand how pages are used. It collects your IP address, browser and device details, pages viewed, clicks and scrolling, and records page sessions (Webvisor). Text you type into forms is not recorded. You can block it with any tracker blocker or by disabling cookies for this site."
+        ]
+      },
+      {
         "h": "Deleting your data",
         "p": [
           "You can delete individual tasks and chats, wipe everything in Settings → Danger zone → Clear all data, or uninstall the app. Since we keep no copy, deleted data cannot be restored."
