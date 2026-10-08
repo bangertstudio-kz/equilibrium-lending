@@ -3,7 +3,7 @@
  * Language is part of the URL: each option is a real link to the same
  * page in another language, so crawlers reach every version.
  */
-import { LOCALES, LOCALE_LABELS, pathFor, type Locale } from '../i18n';
+import { HTML_LANG, LOCALES, LOCALE_LABELS, pathFor, type Locale } from '../i18n';
 interface Props { locale: Locale; page?: string }
 const { locale, page = '' } = Astro.props;
 ---
@@ -18,7 +18,7 @@ const { locale, page = '' } = Astro.props;
   <ul class="menu" role="listbox" hidden>
     {LOCALES.map((l) => (
       <li>
-        <a href={pathFor(l, page)} lang={l} hreflang={l} role="option" aria-selected={l === locale} class:list={{ active: l === locale }}>
+        <a href={pathFor(l, page)} lang={HTML_LANG[l]} hreflang={l === 'meow' ? undefined : l} role="option" aria-selected={l === locale} class:list={{ active: l === locale }}>
           {LOCALE_LABELS[l]}<small>{l}</small>
         </a>
       </li>

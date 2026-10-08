@@ -1,7 +1,7 @@
 ---
 import '../styles/main.css';
 import LanguageSwitcher from './LanguageSwitcher.astro';
-import { LOCALES, DEFAULT_LOCALE, HTML_LANG, OG_LOCALES, pathFor, useT, type Locale } from '../i18n';
+import { INDEXED_LOCALES, DEFAULT_LOCALE, HTML_LANG, OG_LOCALES, pathFor, useT, type Locale } from '../i18n';
 import { links } from '../links';
 
 interface Props {
@@ -28,7 +28,8 @@ const anchor = (id: string) => (page ? `${home}#${id}` : `#${id}`);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {LOCALES.map((alt) => <link rel="alternate" hreflang={alt} href={site + pathFor(alt, page)} />)}
+    {INDEXED_LOCALES.map((alt) => <link rel="alternate" hreflang={alt} href={site + pathFor(alt, page)} />)}
+    {locale === 'meow' && <meta name="robots" content="noindex" />}
     <link rel="alternate" hreflang="x-default" href={site + pathFor(DEFAULT_LOCALE, page)} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
