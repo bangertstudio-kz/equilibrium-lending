@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "title": "Equilibrium: tasks, calendar and on-device AI",
+    "description": "Calendar, list, kanban and graph views of your tasks in one app. The AI assistant runs right on your device, and an MCP server connects Claude and Cursor."
+  },
+  "nav": {
+    "sections": "Sections",
+    "views": "Views",
+    "ai": "AI",
+    "mcp": "MCP",
+    "privacy": "Privacy",
+    "download": "Download",
+    "links": "Links"
+  },
+  "hero": {
+    "title": "Tasks in a calendar, a list, a kanban and a graph",
+    "lead": "One set of tasks, four ways to look at it. Plus an AI that runs right on your device: say “plan tomorrow” and it lays the day out as tasks.",
+    "web": "Try in browser",
+    "note": "Free. No account. Your data stays on your device.",
+    "phoneAlt": "Calendar screen in the app",
+    "desktopAlt": "Graph of linked tasks in the Mac app",
+    "web_platform": "Web",
+    "platforms": "Available on"
+  },
+  "status": {
+    "todo": "To do",
+    "progress": "In progress",
+    "done": "Done",
+    "urgent": "Urgent"
+  },
+  "tabs": {
+    "calendar": "Calendar",
+    "list": "List",
+    "kanban": "Kanban"
+  },
+  "tasks": {
+    "gym": "Gym",
+    "teamCall": "Team call",
+    "report": "Prepare the report",
+    "groceries": "Buy groceries",
+    "callMom": "Call mom",
+    "payRent": "Pay the rent",
+    "petyaCall": "Call with Peter",
+    "design": "Design",
+    "screens": "Screens",
+    "release": "Release",
+    "backup": "Backup",
+    "review": "Review",
+    "payment": "Payment",
+    "copy": "Copy",
+    "layout": "Layout",
+    "logo": "Logo",
+    "domain": "Domain"
+  },
+  "views": {
+    "eyebrow": "Four views",
+    "title": "The same tasks from different angles",
+    "lead": "Turn on only the tabs you need. Drag a task on the kanban, and its status changes in the list and its color in the calendar.",
+    "calendar": "A month with task names right in the days. Tap a day to see its schedule below.",
+    "list": "Search, filters by status and priority, and new tasks straight from the search field.",
+    "kanban": "Your own columns for every project, with cards you drag between them.",
+    "graph": "Graph",
+    "graphText": "Linked tasks form a network: you see what depends on what and where a chain is stuck.",
+    "graphAlt": "Graph of linked tasks"
+  },
+  "ai": {
+    "eyebrow": "On-device AI",
+    "title": "Describe your day, get tasks",
+    "lead": "The model downloads once and then works offline. Your plans never go to any server.",
+    "p1t": "Chat with a task mode.",
+    "p1": "The assistant proposes a list, you tick the ones you want and create them with one button.",
+    "p2t": "Routines link themselves.",
+    "p2": "Steps of one plan are linked in order and show up as a chain in the graph.",
+    "p3t": "It understands time.",
+    "p3": "“From one to five”, “on Friday”, “remind me at 9:30” become exact dates and notifications.",
+    "p4t": "By voice.",
+    "p4": "Dictate a task. Speech recognition is local too.",
+    "chatAlt": "Example chat with the assistant",
+    "user": "Plan tomorrow: gym in the morning, a one-hour call with Peter at 12, groceries in the evening",
+    "reply": "Done, here are three tasks for tomorrow. Check them and create.",
+    "proposed": "Suggested tasks",
+    "linked": "Linked in order",
+    "create": "Create tasks ({n})",
+    "dismiss": "Dismiss"
+  },
+  "mcp": {
+    "eyebrow": "MCP for Claude, Cursor and others",
+    "title": "Your AI agent sees and edits your tasks",
+    "lead": "On the Mac, the app runs a local MCP server. Connect it to Claude Code, Claude Desktop, Cursor or any MCP client, and the agent can triage your backlog, plan a sprint or close tasks as it works.",
+    "note": "The server listens on 127.0.0.1 only and runs while the app is open.",
+    "terminal": "Terminal",
+    "copy": "Copy",
+    "copied": "Copied",
+    "tools": {
+      "list_projects": "projects",
+      "list_tasks": "tasks with filters",
+      "create_tasks": "several tasks at once",
+      "update_task": "status, time, reminder",
+      "create_status": "a new column",
+      "delete_tasks": "delete by id"
+    }
+  },
+  "final": {
+    "title": "Start with one project",
+    "lead": "Create a project, add a couple of tasks by voice and look at them in four views.",
+    "appStore": "Download on the App Store",
+    "web": "Web version"
+  },
+  "footer": {
+    "support": "Support",
+    "privacy": "Privacy policy"
+  },
+  "support": {
+    "meta": {
+      "title": "Equilibrium Support",
+      "description": "Contact and answers to common questions about Equilibrium, the task tracker with on-device AI."
+    },
+    "title": "Equilibrium Support",
+    "subtitle": "Task tracker for iPhone, iPad, Mac and the web",
+    "contactTitle": "Contact us",
+    "contactText": "Have a question, found a bug or want to suggest a feature? Email us and we will reply within 2 business days:",
+    "contactNote": "Please include your device model, OS version and app version.",
+    "mailSubject": "Equilibrium Support",
+    "faqTitle": "FAQ",
+    "faq": [
+      {
+        "q": "Where is my data stored?",
+        "a": "Projects, tasks, statuses and AI chats are stored locally on your device. We do not upload them anywhere."
+      },
+      {
+        "q": "How do I delete my data?",
+        "a": "Delete single tasks or chats inside the app. To wipe everything, open Settings → Danger zone → Clear all data and hold the button. Uninstalling the app also removes all data from the device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Equilibrium works without registration or login."
+      },
+      {
+        "q": "Does the AI assistant send my data anywhere?",
+        "a": "No. The model is downloaded once and then runs on your device. Your messages, tasks and voice never leave it."
+      },
+      {
+        "q": "How do I connect Claude, Cursor or another AI agent?",
+        "a": "On the Mac, open Settings → AI → MCP. The app shows the address of its local server and ready-made setup for popular clients."
+      },
+      {
+        "q": "Notifications don't arrive. What should I do?",
+        "a": "Make sure notifications for Equilibrium are allowed in System Settings → Notifications, then set the reminder on the task again."
+      },
+      {
+        "q": "Can I use the app in my language?",
+        "a": "Yes. The app is available in English, Russian, Kazakh, Spanish and Portuguese. Change the language in Settings."
+      }
+    ],
+    "legalTitle": "Legal"
+  },
+  "privacyPolicy": {
+    "meta": {
+      "title": "Equilibrium Privacy Policy",
+      "description": "How Equilibrium handles your data: local storage, on-device AI, usage analytics and your choices."
+    },
+    "title": "Privacy Policy",
+    "updated": "Last updated: {date}",
+    "summaryTitle": "The short version",
+    "summary": [
+      "Your tasks, projects and AI chats stay on your device.",
+      "The AI assistant and voice input run on the device and send nothing out.",
+      "We collect anonymous usage events to improve the app, never the content of your tasks.",
+      "No account. You can wipe all data in Settings at any time."
+    ],
+    "sections": [
+      {
+        "h": "Who we are",
+        "p": [
+          "Equilibrium is made by Bangert Studio. This policy explains what data the app handles, where it goes and what control you have over it. Questions: {email}."
+        ]
+      },
+      {
+        "h": "Data stored on your device",
+        "p": [
+          "Everything you create is kept in a database on your device:"
+        ],
+        "list": [
+          "projects, tasks, statuses, links between tasks and reminders",
+          "conversations with the AI assistant and the tasks it suggested",
+          "app settings, such as language, theme and visible tabs"
+        ],
+        "after": [
+          "We do not upload this data to our servers or any cloud service, and we have no copy of it."
+        ]
+      },
+      {
+        "h": "Usage analytics",
+        "p": [
+          "To understand which features are used and to find crashes, the app sends usage events to AppMetrica (Yandex) and Amplitude. An event says that an action happened, for example that a screen was opened or a task was created, together with technical details: device model, operating system, app version and language. Events are linked to a random identifier, not to your name or email.",
+          "Events do not contain the text of your tasks, notes or chats."
+        ]
+      },
+      {
+        "h": "On-device AI",
+        "p": [
+          "The AI assistant uses models that you download once from Hugging Face. During the download Hugging Face receives a normal file request, including your IP address. After that, chats, task suggestions and voice recognition run entirely on your device. Your prompts and recordings are not sent anywhere."
+        ]
+      },
+      {
+        "h": "Microphone and notifications",
+        "p": [
+          "The microphone is used only while you dictate a task. Audio is processed on the device and is not stored. Reminders are local notifications scheduled on your device."
+        ]
+      },
+      {
+        "h": "MCP server on the Mac",
+        "p": [
+          "On the Mac the app runs a local MCP server so that AI tools you choose, such as Claude or Cursor, can read and change your tasks. The server listens only on 127.0.0.1 and works only while the app is open. Data you let such a tool access is then handled under that tool's own privacy policy."
+        ]
+      },
+      {
+        "h": "Purchases",
+        "p": [
+          "Optional in-app donations are processed by the App Store. We do not receive or store your payment details."
+        ]
+      },
+      {
+        "h": "Deleting your data",
+        "p": [
+          "You can delete individual tasks and chats, wipe everything in Settings → Danger zone → Clear all data, or uninstall the app. Since we keep no copy, deleted data cannot be restored."
+        ]
+      },
+      {
+        "h": "Children",
+        "p": [
+          "The app is not directed to children under 13, and we do not knowingly collect information about them."
+        ]
+      },
+      {
+        "h": "Changes to this policy",
+        "p": [
+          "If we change this policy, we will publish the new version on this page and update the date above."
+        ]
+      },
+      {
+        "h": "Contact",
+        "p": [
+          "For any privacy question write to {email}."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "eyebrow": "Privacy",
+    "title": "Nothing extra leaves your device",
+    "f1t": "No account",
+    "f1": "No sign-up. Projects, tasks and chats live in a local database.",
+    "f2t": "The model is yours",
+    "f2": "The assistant and speech recognition work offline, nothing is sent anywhere.",
+    "f3t": "Wipe in one gesture",
+    "f3": "Settings have a full data wipe: hold the button and the app is as good as new."
+  }
+}

@@ -1,0 +1,108 @@
+---
+import '../styles/main.css';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { LOCALES, DEFAULT_LOCALE, HTML_LANG, OG_LOCALES, pathFor, useT, type Locale } from '../i18n';
+import { links } from '../links';
+
+interface Props {
+  locale: Locale;
+  /** '' for home, '/privacy', '/support'. */
+  page?: string;
+  title: string;
+  description: string;
+}
+const { locale, page = '', title, description } = Astro.props;
+const t = useT(locale);
+const site = Astro.site!.origin;
+const canonical = site + pathFor(locale, page);
+const home = pathFor(locale);
+// Section links work from any page: on home they are plain anchors.
+const anchor = (id: string) => (page ? `${home}#${id}` : `#${id}`);
+---
+
+<!doctype html>
+<html lang={HTML_LANG[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {LOCALES.map((alt) => <link rel="alternate" hreflang={alt} href={site + pathFor(alt, page)} />)}
+    <link rel="alternate" hreflang="x-default" href={site + pathFor(DEFAULT_LOCALE, page)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={OG_LOCALES[locale]} />
+    <meta property="og:site_name" content="Equilibrium" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131112" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-in">
+        <a href={home} class="brand">
+          <img src="/logo.svg" alt="" width="30" height="30" />
+          <span>Equilibrium</span>
+        </a>
+        <nav class="nav" aria-label={t('nav.sections')}>
+          <a href={anchor('views')}>{t('nav.views')}</a>
+          <a href={anchor('ai')}>{t('nav.ai')}</a>
+          <a href={anchor('mcp')}>{t('nav.mcp')}</a>
+          <a href={anchor('privacy')}>{t('nav.privacy')}</a>
+        </nav>
+        <div class="actions">
+          <LanguageSwitcher locale={locale} page={page} />
+          <a href={links.appStore} class="btn btn-primary btn-sm" target="_blank" rel="noopener">{t('nav.download')}</a>
+        </div>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="footer">
+      <div class="wrap footer-in">
+        <span>© 2026 Equilibrium · <a href={links.developers} target="_blank" rel="noopener">Bangert Studio</a></span>
+        <nav aria-label={t('nav.links')}>
+          <a href={links.telegram} target="_blank" rel="noopener">Telegram</a>
+          <a href={pathFor(locale, '/support')}>{t('footer.support')}</a>
+          <a href={pathFor(locale, '/privacy')}>{t('footer.privacy')}</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+/* Header */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.topbar-in { display: flex; align-items: center; gap: 24px; height: 68px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; text-decoration: none; }
+.nav { display: flex; gap: 22px; margin-left: auto; font-weight: 500; font-size: 15px; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover { color: var(--fg); }
+.btn-sm { height: 40px; padding: 0 16px; font-size: 14px; }
+.actions { display: flex; align-items: center; gap: 6px; }
+@media (max-width: 720px) {
+  .nav { display: none; }
+  .actions { margin-left: auto; }
+}
+
+/* Footer */
+.footer { border-top: 1px solid var(--line); padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: 14px; }
+.footer-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; }
+.footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+.footer a { text-decoration: none; }
+.footer a:hover { color: var(--fg); }
+</style>

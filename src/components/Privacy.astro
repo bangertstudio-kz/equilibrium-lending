@@ -1,0 +1,41 @@
+---
+import DocPage from './DocPage.astro';
+import { messagesFor, pathFor, type Locale } from '../i18n';
+import { links } from '../links';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = messagesFor(locale).privacyPolicy;
+
+/** Date of the current wording; bump it whenever the text changes. */
+const UPDATED = new Date(2026, 9, 8);
+const updated = m.updated.replace('{date}', new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(UPDATED));
+
+/** Splits "… {email} …" so the address renders as a link. */
+const withEmail = (text: string) => text.split('{email}');
+type Section = { h: string; p: string[]; list?: string[]; after?: string[] };
+---
+
+<DocPage locale={locale} page="/privacy" title={m.meta.title} description={m.meta.description}>
+  <h1>{m.title}</h1>
+  <p class="muted">{updated}</p>
+
+  <section class="card">
+    <h2>{m.summaryTitle}</h2>
+    <ul>{m.summary.map((line: string) => <li>{line}</li>)}</ul>
+  </section>
+
+  {m.sections.map((s: Section, i: number) => (
+    <>
+      <h2>{i + 1}. {s.h}</h2>
+      {s.p.map((text) => {
+        const [before, after] = withEmail(text);
+        return after === undefined ? <p>{text}</p> : <p>{before}<a href={`mailto:${links.email}`}>{links.email}</a>{after}</p>;
+      })}
+      {s.list && <ul>{s.list.map((li) => <li>{li}</li>)}</ul>}
+      {s.after?.map((text) => <p>{text}</p>)}
+    </>
+  ))}
+
+  <p class="muted" style="margin-top: 40px"><a href={pathFor(locale, '/support')}>{messagesFor(locale).footer.support}</a></p>
+</DocPage>

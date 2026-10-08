@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "title": "Equilibrium: tareas, calendario e IA en el dispositivo",
+    "description": "Calendario, lista, kanban y grafo de tus tareas en una sola app. El asistente de IA funciona en tu dispositivo y un servidor MCP conecta Claude y Cursor."
+  },
+  "nav": {
+    "sections": "Secciones",
+    "views": "Vistas",
+    "ai": "IA",
+    "mcp": "MCP",
+    "privacy": "Privacidad",
+    "download": "Descargar",
+    "links": "Enlaces"
+  },
+  "hero": {
+    "title": "Tareas en un calendario, una lista, un kanban y un grafo",
+    "lead": "Un conjunto de tareas y cuatro formas de verlo. Además, una IA que funciona en tu dispositivo: di «planifica mañana» y ella reparte el día en tareas.",
+    "web": "Probar en el navegador",
+    "note": "Gratis. Sin cuenta. Tus datos se quedan en el dispositivo.",
+    "phoneAlt": "Pantalla del calendario en la app",
+    "desktopAlt": "Grafo de tareas enlazadas en la app para Mac",
+    "web_platform": "Web",
+    "platforms": "Disponible en"
+  },
+  "status": {
+    "todo": "To do",
+    "progress": "En curso",
+    "done": "Hecho",
+    "urgent": "Urgente"
+  },
+  "tabs": {
+    "calendar": "Calendario",
+    "list": "Lista",
+    "kanban": "Kanban"
+  },
+  "tasks": {
+    "gym": "Gimnasio",
+    "teamCall": "Llamada con el equipo",
+    "report": "Preparar el informe",
+    "groceries": "Hacer la compra",
+    "callMom": "Llamar a mamá",
+    "payRent": "Pagar el alquiler",
+    "petyaCall": "Llamada con Pedro",
+    "design": "Diseño",
+    "screens": "Pantallas",
+    "release": "Lanzamiento",
+    "backup": "Copia",
+    "review": "Revisión",
+    "payment": "Pago",
+    "copy": "Textos",
+    "layout": "Maquetación",
+    "logo": "Logo",
+    "domain": "Dominio"
+  },
+  "views": {
+    "eyebrow": "Cuatro vistas",
+    "title": "Las mismas tareas, distintos ángulos",
+    "lead": "Activa solo las pestañas que necesitas. Arrastra una tarea en el kanban y su estado cambia en la lista y su color en el calendario.",
+    "calendar": "Un mes con los nombres de las tareas dentro de los días. Toca un día y abajo verás su agenda.",
+    "list": "Búsqueda, filtros por estado y prioridad, y tareas nuevas desde el propio buscador.",
+    "kanban": "Columnas propias para cada proyecto, con tarjetas que arrastras entre ellas.",
+    "graph": "Grafo",
+    "graphText": "Las tareas enlazadas forman una red: ves qué depende de qué y dónde se atascó la cadena.",
+    "graphAlt": "Grafo de tareas enlazadas"
+  },
+  "ai": {
+    "eyebrow": "IA en el dispositivo",
+    "title": "Describe tu día, recibe tareas",
+    "lead": "El modelo se descarga una vez y luego funciona sin internet. Tus planes no van a ningún servidor.",
+    "p1t": "Chat con modo de tareas.",
+    "p1": "El asistente propone una lista, marcas las que quieres y las creas con un botón.",
+    "p2t": "Las rutinas se enlazan solas.",
+    "p2": "Los pasos de un plan se enlazan en orden y aparecen como una cadena en el grafo.",
+    "p3t": "Entiende el tiempo.",
+    "p3": "«De una a cinco», «el viernes», «recuérdamelo a las 9:30» se convierten en fechas y avisos exactos.",
+    "p4t": "Por voz.",
+    "p4": "Dicta una tarea. El reconocimiento de voz también es local.",
+    "chatAlt": "Ejemplo de chat con el asistente",
+    "user": "Planifica mañana: gimnasio por la mañana, una llamada de una hora con Pedro a las 12, la compra por la tarde",
+    "reply": "Listo, aquí tienes tres tareas para mañana. Revísalas y créalas.",
+    "proposed": "Tareas sugeridas",
+    "linked": "Enlazadas en orden",
+    "create": "Crear tareas ({n})",
+    "dismiss": "Descartar"
+  },
+  "mcp": {
+    "eyebrow": "MCP para Claude, Cursor y otros",
+    "title": "Tu agente de IA ve y cambia tus tareas",
+    "lead": "En el Mac, la app levanta un servidor MCP local. Conéctalo a Claude Code, Claude Desktop, Cursor o cualquier cliente MCP, y el agente podrá ordenar tu backlog, planificar un sprint o cerrar tareas mientras trabaja.",
+    "note": "El servidor solo escucha en 127.0.0.1 y funciona mientras la app está abierta.",
+    "terminal": "Terminal",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "tools": {
+      "list_projects": "proyectos",
+      "list_tasks": "tareas con filtros",
+      "create_tasks": "varias tareas a la vez",
+      "update_task": "estado, hora, aviso",
+      "create_status": "columna nueva",
+      "delete_tasks": "borrar por id"
+    }
+  },
+  "final": {
+    "title": "Empieza con un proyecto",
+    "lead": "Crea un proyecto, añade un par de tareas por voz y míralas en las cuatro vistas.",
+    "appStore": "Descargar en App Store",
+    "web": "Versión web"
+  },
+  "footer": {
+    "support": "Soporte",
+    "privacy": "Política de privacidad"
+  },
+  "support": {
+    "meta": {
+      "title": "Soporte de Equilibrium",
+      "description": "Contacto y respuestas a las preguntas frecuentes sobre Equilibrium, el gestor de tareas con IA en el dispositivo."
+    },
+    "title": "Soporte de Equilibrium",
+    "subtitle": "Gestor de tareas para iPhone, iPad, Mac y web",
+    "contactTitle": "Contáctanos",
+    "contactText": "¿Tienes una pregunta, encontraste un error o quieres sugerir una función? Escríbenos y responderemos en 2 días hábiles:",
+    "contactNote": "Indica el modelo del dispositivo, la versión del sistema y la versión de la app.",
+    "mailSubject": "Soporte Equilibrium",
+    "faqTitle": "Preguntas frecuentes",
+    "faq": [
+      {
+        "q": "¿Dónde se guardan mis datos?",
+        "a": "Los proyectos, tareas, estados y chats con la IA se guardan localmente en tu dispositivo. No los subimos a ningún sitio."
+      },
+      {
+        "q": "¿Cómo borro mis datos?",
+        "a": "Borra tareas o chats sueltos dentro de la app. Para borrarlo todo, abre Ajustes → Zona de peligro → Borrar todos los datos y mantén pulsado el botón. Desinstalar la app también elimina todos los datos del dispositivo."
+      },
+      {
+        "q": "¿Necesito una cuenta?",
+        "a": "No. Equilibrium funciona sin registro ni inicio de sesión."
+      },
+      {
+        "q": "¿El asistente de IA envía mis datos?",
+        "a": "No. El modelo se descarga una vez y luego funciona en tu dispositivo. Tus mensajes, tareas y voz nunca salen de él."
+      },
+      {
+        "q": "¿Cómo conecto Claude, Cursor u otro agente de IA?",
+        "a": "En el Mac, abre Ajustes → IA → MCP. La app muestra la dirección del servidor local y la configuración lista para los clientes más usados."
+      },
+      {
+        "q": "No me llegan las notificaciones. ¿Qué hago?",
+        "a": "Comprueba que las notificaciones de Equilibrium estén permitidas en Ajustes del Sistema → Notificaciones y vuelve a poner el recordatorio en la tarea."
+      },
+      {
+        "q": "¿Puedo usar la app en mi idioma?",
+        "a": "Sí. La app está disponible en inglés, ruso, kazajo, español y portugués. Cambia el idioma en Ajustes."
+      }
+    ],
+    "legalTitle": "Información legal"
+  },
+  "privacyPolicy": {
+    "meta": {
+      "title": "Política de privacidad de Equilibrium",
+      "description": "Cómo trata Equilibrium tus datos: almacenamiento local, IA en el dispositivo, analítica de uso y tus opciones."
+    },
+    "title": "Política de privacidad",
+    "updated": "Última actualización: {date}",
+    "summaryTitle": "En resumen",
+    "summary": [
+      "Tus tareas, proyectos y chats con la IA se quedan en tu dispositivo.",
+      "El asistente de IA y la entrada por voz funcionan en el dispositivo y no envían nada.",
+      "Recogemos eventos de uso anónimos para mejorar la app, nunca el contenido de tus tareas.",
+      "Sin cuenta. Puedes borrar todos los datos en Ajustes cuando quieras."
+    ],
+    "sections": [
+      {
+        "h": "Quiénes somos",
+        "p": [
+          "Equilibrium lo desarrolla Bangert Studio. Esta política explica qué datos trata la app, adónde van y qué control tienes sobre ellos. Preguntas: {email}."
+        ]
+      },
+      {
+        "h": "Datos guardados en tu dispositivo",
+        "p": [
+          "Todo lo que creas se guarda en una base de datos en tu dispositivo:"
+        ],
+        "list": [
+          "proyectos, tareas, estados, enlaces entre tareas y recordatorios",
+          "conversaciones con el asistente de IA y las tareas que sugirió",
+          "ajustes de la app, como idioma, tema y pestañas visibles"
+        ],
+        "after": [
+          "No subimos estos datos a nuestros servidores ni a ningún servicio en la nube, y no tenemos copia de ellos."
+        ]
+      },
+      {
+        "h": "Analítica de uso",
+        "p": [
+          "Para saber qué funciones se usan y encontrar fallos, la app envía eventos de uso a AppMetrica (Yandex) y Amplitude. Un evento indica que ocurrió una acción, por ejemplo que se abrió una pantalla o se creó una tarea, junto con datos técnicos: modelo del dispositivo, sistema operativo, versión de la app e idioma. Los eventos se asocian a un identificador aleatorio, no a tu nombre ni a tu email.",
+          "Los eventos no contienen el texto de tus tareas, notas ni chats."
+        ]
+      },
+      {
+        "h": "IA en el dispositivo",
+        "p": [
+          "El asistente de IA usa modelos que descargas una vez desde Hugging Face. Durante la descarga, Hugging Face recibe una petición de archivo normal, incluida tu dirección IP. Después, el chat, las sugerencias de tareas y el reconocimiento de voz funcionan por completo en tu dispositivo. Tus peticiones y grabaciones no se envían a ningún sitio."
+        ]
+      },
+      {
+        "h": "Micrófono y notificaciones",
+        "p": [
+          "El micrófono solo se usa mientras dictas una tarea. El audio se procesa en el dispositivo y no se guarda. Los recordatorios son notificaciones locales programadas en tu dispositivo."
+        ]
+      },
+      {
+        "h": "Servidor MCP en el Mac",
+        "p": [
+          "En el Mac, la app levanta un servidor MCP local para que las herramientas de IA que elijas, como Claude o Cursor, puedan leer y cambiar tus tareas. El servidor solo escucha en 127.0.0.1 y solo funciona mientras la app está abierta. Los datos a los que des acceso a esa herramienta se tratan según su propia política de privacidad."
+        ]
+      },
+      {
+        "h": "Compras",
+        "p": [
+          "Los donativos opcionales dentro de la app los procesa la App Store. No recibimos ni guardamos tus datos de pago."
+        ]
+      },
+      {
+        "h": "Borrar tus datos",
+        "p": [
+          "Puedes borrar tareas y chats sueltos, borrarlo todo en Ajustes → Zona de peligro → Borrar todos los datos, o desinstalar la app. Como no guardamos copia, los datos borrados no se pueden recuperar."
+        ]
+      },
+      {
+        "h": "Menores",
+        "p": [
+          "La app no está dirigida a menores de 13 años y no recogemos a sabiendas información sobre ellos."
+        ]
+      },
+      {
+        "h": "Cambios en esta política",
+        "p": [
+          "Si cambiamos esta política, publicaremos la nueva versión en esta página y actualizaremos la fecha de arriba."
+        ]
+      },
+      {
+        "h": "Contacto",
+        "p": [
+          "Para cualquier pregunta sobre privacidad, escribe a {email}."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "eyebrow": "Privacidad",
+    "title": "Nada de más sale de tu dispositivo",
+    "f1t": "Sin cuenta",
+    "f1": "No hace falta registrarse. Proyectos, tareas y chats viven en una base de datos local.",
+    "f2t": "El modelo es tuyo",
+    "f2": "El asistente y el reconocimiento de voz funcionan sin conexión, no se envía nada.",
+    "f3t": "Borrar con un gesto",
+    "f3": "Los ajustes tienen un borrado total: mantén pulsado el botón y la app queda como nueva."
+  }
+}

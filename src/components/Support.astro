@@ -1,0 +1,33 @@
+---
+import DocPage from './DocPage.astro';
+import { messagesFor, pathFor, type Locale } from '../i18n';
+import { links } from '../links';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = messagesFor(locale).support;
+const mailto = `mailto:${links.email}?subject=${encodeURIComponent(m.mailSubject)}`;
+---
+
+<DocPage locale={locale} page="/support" title={m.meta.title} description={m.meta.description}>
+  <h1>{m.title}</h1>
+  <p class="muted">{m.subtitle}</p>
+
+  <section class="card">
+    <h2>{m.contactTitle}</h2>
+    <p>{m.contactText}</p>
+    <p class="mail"><a href={mailto}>{links.email}</a></p>
+    <p class="muted">{m.contactNote}</p>
+  </section>
+
+  <h2>{m.faqTitle}</h2>
+  {m.faq.map((item: { q: string; a: string }) => (
+    <>
+      <h3>{item.q}</h3>
+      <p>{item.a}</p>
+    </>
+  ))}
+
+  <h2>{m.legalTitle}</h2>
+  <p><a href={pathFor(locale, '/privacy')}>{messagesFor(locale).footer.privacy}</a></p>
+</DocPage>

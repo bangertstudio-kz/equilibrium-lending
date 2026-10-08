@@ -1,0 +1,55 @@
+---
+/** The task card from the app: priority stripe, status badge, times. */
+interface Props {
+  title: string;
+  status: { name: string; color: string; dark?: boolean };
+  start: string;
+  end: string;
+  priority?: 'low' | 'medium' | 'high';
+  urgent?: string;
+  class?: string;
+  style?: string;
+}
+const { title, status, start, end, priority = 'low', urgent, class: cls, style } = Astro.props;
+const priorityColor = { low: '#2fa866', medium: '#e5ac00', high: '#d93a2e' };
+---
+
+<div class:list={['tile', cls]} style={style}>
+  <span class="stripe" style={`background:${priorityColor[priority]}`}></span>
+  <div class="body">
+    <div class="title">{title}</div>
+    <div class="badges">
+      <span class:list={['badge', { dark: status.dark }]} style={`background:${status.color}`}>{status.name}</span>
+      {urgent && <span class="badge" style="background:#d93a2e">{urgent}</span>}
+    </div>
+  </div>
+  <div class="time">
+    <span>{start}</span>
+    <span class="muted">{end}</span>
+  </div>
+</div>
+
+<style>
+  .tile {
+    display: grid;
+    grid-template-columns: 4px 1fr auto;
+    gap: 12px;
+    background: var(--card-face);
+    border-radius: 18px;
+    padding: 10px 12px 10px 10px;
+    box-shadow: 0 4px 0 var(--edge);
+    margin-bottom: 4px;
+  }
+  .stripe { border-radius: 4px; }
+  .body { min-width: 0; display: grid; gap: 6px; }
+  .title { font-weight: 700; font-size: 15px; line-height: 1.25; }
+  .badges { display: flex; flex-wrap: wrap; gap: 4px; }
+  .badge {
+    font-size: 11px; font-weight: 600; line-height: 1;
+    padding: 5px 9px; border-radius: 999px; color: #fff;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 0.22);
+  }
+  .badge.dark { color: #131112; }
+  .time { display: grid; text-align: right; font-size: 14px; font-variant-numeric: tabular-nums; line-height: 1.5; }
+  .muted { color: var(--muted); }
+</style>
