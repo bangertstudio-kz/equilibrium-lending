@@ -63,6 +63,11 @@ p { margin: 0; }
   font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--accent);
 }
+/* Platform limit of a feature, e.g. "Mac only" */
+.only {
+  display: inline-block; margin-top: 14px; padding: 4px 12px; border-radius: 999px;
+  font-size: 14px; font-weight: 600; background: var(--accent-soft); color: var(--accent);
+}
 .lead { color: var(--muted); font-size: 19px; max-width: 58ch; }
 
 /* Clay buttons, same as AppButton */
@@ -73,6 +78,7 @@ p { margin: 0; }
   border: 0; cursor: pointer; white-space: nowrap;
   margin-bottom: 4px; transition: transform 0.08s, box-shadow 0.08s, filter 0.15s;
 }
+[hidden] { display: none !important; }
 .btn:hover { filter: brightness(1.08); }
 .btn:active { transform: translateY(4px); box-shadow: none !important; }
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

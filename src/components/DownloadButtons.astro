@@ -1,0 +1,44 @@
+---
+/**
+ * One "Download" button that adapts to the visitor's OS (macOS, Windows,
+ * iPhone/iPad). Without a match or without JS it opens the /download page.
+ */
+import { pathFor, useT, type Locale } from '../i18n';
+import { links } from '../links';
+import { icons } from '../icons';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useT(locale);
+const allUrl = pathFor(locale, '/download');
+const targets = {
+  mac: { href: links.appStore, label: t('download.mac'), icon: icons.apple, external: true },
+  ios: { href: links.appStore, label: t('download.button'), icon: icons.apple, external: true },
+  windows: { href: links.windows, label: t('download.windows'), icon: icons.windows, external: false },
+};
+---
+
+<a href={allUrl} class="btn btn-primary" data-download={JSON.stringify(targets)}>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" hidden />
+  <span>{t('download.button')}</span>
+</a>
+<a href={allUrl} class="btn btn-secondary" data-all hidden>{t('download.allPlatforms')}</a>
+<a href={links.web} class="btn btn-secondary" target="_blank" rel="noopener">{t('hero.web')}</a>
+
+<script>
+  import { detectOS } from '../os';
+  const os = detectOS();
+  if (os) {
+    for (const btn of document.querySelectorAll<HTMLAnchorElement>('[data-download]')) {
+      const target = JSON.parse(btn.dataset.download!)[os];
+      btn.href = target.href;
+      btn.querySelector('span')!.textContent = target.label;
+      const svg = btn.querySelector('svg')!;
+      svg.innerHTML = target.icon;
+      svg.hidden = false;
+      if (target.external) Object.assign(btn, { target: '_blank', rel: 'noopener' });
+      else btn.setAttribute('download', '');
+      (btn.nextElementSibling as HTMLElement).hidden = false; // "All platforms"
+    }
+  }
+</script>

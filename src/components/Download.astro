@@ -1,0 +1,70 @@
+---
+import DocPage from './DocPage.astro';
+import { messagesFor, type Locale } from '../i18n';
+import { links } from '../links';
+import { icons } from '../icons';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = messagesFor(locale).download;
+const globe = '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/>';
+const items = [
+  { os: 'ios', ...m.items.ios, icon: icons.apple, href: links.appStore, external: true },
+  { os: 'mac', ...m.items.mac, icon: icons.apple, href: links.appStore, external: true },
+  { os: 'windows', ...m.items.windows, icon: icons.windows, href: links.windows, external: false },
+  { os: 'web', ...m.items.web, icon: globe, href: links.web, external: true },
+];
+---
+
+<DocPage locale={locale} page="/download" title={m.meta.title} description={m.meta.description}>
+  <h1>{m.title}</h1>
+  <p class="muted">{m.subtitle}</p>
+
+  <ul class="platform-list">
+    {items.map((it) => (
+      <li class="card" data-os={it.os}>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" set:html={it.icon} />
+        <div>
+          <h2>{it.name} <span class="yours" hidden>{m.yours}</span></h2>
+          <p class="muted">{it.note}</p>
+        </div>
+        {it.external
+          ? <a href={it.href} class="btn btn-primary" target="_blank" rel="noopener">{it.action}</a>
+          : <a href={it.href} class="btn btn-primary" download>{it.action}</a>}
+      </li>
+    ))}
+  </ul>
+
+  <p class="muted tip">{m.windowsTip}</p>
+</DocPage>
+
+<script>
+  import { detectOS } from '../os';
+  // Visitor's platform goes first and is marked.
+  const card = document.querySelector<HTMLElement>(`[data-os="${detectOS()}"]`);
+  if (card) {
+    card.parentElement!.prepend(card);
+    card.classList.add('current');
+    card.querySelector<HTMLElement>('.yours')!.hidden = false;
+  }
+</script>
+
+<style>
+  .platform-list { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 16px; }
+  .platform-list .card {
+    margin: 0; display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 16px;
+  }
+  .platform-list svg { width: 32px; height: 32px; }
+  .platform-list h2 { margin: 0; font-size: 20px; }
+  .platform-list .muted { margin-top: 2px; }
+  .platform-list .current { outline: 2px solid var(--accent); }
+  .yours {
+    font-size: 12px; font-weight: 600; vertical-align: middle; margin-left: 6px;
+    padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+  }
+  .tip { margin-top: 24px; font-size: 14px; }
+  @media (max-width: 560px) {
+    .platform-list .card { grid-template-columns: 32px 1fr; }
+    .platform-list .btn { grid-column: 1 / -1; }
+  }
+</style>

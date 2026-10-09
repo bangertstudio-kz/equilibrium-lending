@@ -74,6 +74,7 @@
   "ai": {
     "eyebrow": "IA en el dispositivo",
     "title": "Describe tu día, recibe tareas",
+    "only": "Por ahora en iPhone, iPad y Mac, otras plataformas pronto",
     "lead": "El modelo se descarga una vez y luego funciona sin internet. Tus planes no van a ningún servidor.",
     "p1t": "Chat con modo de tareas.",
     "p1": "El asistente propone una lista, marcas las que quieres y las creas con un botón.",
@@ -94,6 +95,7 @@
   "mcp": {
     "eyebrow": "MCP para Claude, Cursor y otros",
     "title": "Tu agente de IA ve y cambia tus tareas",
+    "only": "Por ahora solo en Mac, otras plataformas pronto",
     "lead": "En el Mac, la app levanta un servidor MCP local. Conéctalo a Claude Code, Claude Desktop, Cursor o cualquier cliente MCP, y el agente podrá ordenar tu backlog, planificar un sprint o cerrar tareas mientras trabaja.",
     "note": "El servidor solo escucha en 127.0.0.1 y funciona mientras la app está abierta.",
     "terminal": "Terminal",
@@ -110,9 +112,7 @@
   },
   "final": {
     "title": "Empieza con un proyecto",
-    "lead": "Crea un proyecto, añade un par de tareas por voz y míralas en las cuatro vistas.",
-    "appStore": "Descargar en App Store",
-    "web": "Versión web"
+    "lead": "Crea un proyecto, añade un par de tareas por voz y míralas en las cuatro vistas."
   },
   "footer": {
     "support": "Soporte",
@@ -269,5 +269,41 @@
     "f2": "El asistente y el reconocimiento de voz funcionan sin conexión, no se envía nada.",
     "f3t": "Borrar con un gesto",
     "f3": "Los ajustes tienen un borrado total: mantén pulsado el botón y la app queda como nueva."
+  },
+  "download": {
+    "button": "Descargar",
+    "mac": "Descargar para macOS",
+    "windows": "Descargar para Windows",
+    "meta": {
+      "title": "Descargar Equilibrium",
+      "description": "Equilibrium para iPhone, iPad, Mac, Windows y navegador. Gratis, sin cuenta."
+    },
+    "title": "Descargar Equilibrium",
+    "subtitle": "Gratis en todas las plataformas. Sin cuenta.",
+    "items": {
+      "ios": {
+        "name": "iPhone y iPad",
+        "note": "App Store",
+        "action": "Abrir en App Store"
+      },
+      "mac": {
+        "name": "Mac",
+        "note": "Mac App Store",
+        "action": "Abrir en App Store"
+      },
+      "windows": {
+        "name": "Windows",
+        "note": "Windows 10 y 11, 64 bits",
+        "action": "Descargar instalador"
+      },
+      "web": {
+        "name": "Navegador",
+        "note": "Sin instalación",
+        "action": "Abrir versión web"
+      }
+    },
+    "windowsTip": "Si Windows muestra «Windows protegió su PC», haga clic en «Más información» → «Ejecutar de todas formas». Pasa con apps de desarrolladores pequeños.",
+    "allPlatforms": "Todas las plataformas",
+    "yours": "Tu sistema"
   }
 }

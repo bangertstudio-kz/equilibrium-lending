@@ -35,7 +35,7 @@ export const OG_LOCALES: Record<Locale, string> = {
 const KEEP = new Set([
   'equilibrium', 'app', 'store', 'iphone', 'ipad', 'mac', 'web', 'mcp', 'claude',
   'cursor', 'code', 'desktop', 'telegram', 'appmetrica', 'amplitude', 'hugging',
-  'face', 'yandex', 'webvisor', 'bangert', 'studio', 'ip', 'id', 'ai', 'macos',
+  'face', 'yandex', 'webvisor', 'bangert', 'studio', 'ip', 'id', 'ai', 'macos', 'windows',
 ]);
 const SOUNDS = ['meow', 'mew', 'mrrp', 'purr', 'nya', 'mrow', 'prrr', 'meep'];
 

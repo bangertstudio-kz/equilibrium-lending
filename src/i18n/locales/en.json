@@ -74,6 +74,7 @@
   "ai": {
     "eyebrow": "On-device AI",
     "title": "Describe your day, get tasks",
+    "only": "iPhone, iPad and Mac for now, other platforms coming soon",
     "lead": "The model downloads once and then works offline. Your plans never go to any server.",
     "p1t": "Chat with a task mode.",
     "p1": "The assistant proposes a list, you tick the ones you want and create them with one button.",
@@ -94,6 +95,7 @@
   "mcp": {
     "eyebrow": "MCP for Claude, Cursor and others",
     "title": "Your AI agent sees and edits your tasks",
+    "only": "Mac only for now, other platforms coming soon",
     "lead": "On the Mac, the app runs a local MCP server. Connect it to Claude Code, Claude Desktop, Cursor or any MCP client, and the agent can triage your backlog, plan a sprint or close tasks as it works.",
     "note": "The server listens on 127.0.0.1 only and runs while the app is open.",
     "terminal": "Terminal",
@@ -110,9 +112,7 @@
   },
   "final": {
     "title": "Start with one project",
-    "lead": "Create a project, add a couple of tasks by voice and look at them in four views.",
-    "appStore": "Download on the App Store",
-    "web": "Web version"
+    "lead": "Create a project, add a couple of tasks by voice and look at them in four views."
   },
   "footer": {
     "support": "Support",
@@ -269,5 +269,41 @@
     "f2": "The assistant and speech recognition work offline, nothing is sent anywhere.",
     "f3t": "Wipe in one gesture",
     "f3": "Settings have a full data wipe: hold the button and the app is as good as new."
+  },
+  "download": {
+    "button": "Download",
+    "mac": "Download for macOS",
+    "windows": "Download for Windows",
+    "meta": {
+      "title": "Download Equilibrium",
+      "description": "Equilibrium for iPhone, iPad, Mac, Windows and the browser. Free, no account."
+    },
+    "title": "Download Equilibrium",
+    "subtitle": "Free on every platform. No account.",
+    "items": {
+      "ios": {
+        "name": "iPhone and iPad",
+        "note": "App Store",
+        "action": "Open in App Store"
+      },
+      "mac": {
+        "name": "Mac",
+        "note": "Mac App Store",
+        "action": "Open in App Store"
+      },
+      "windows": {
+        "name": "Windows",
+        "note": "Windows 10 and 11, 64-bit",
+        "action": "Download installer"
+      },
+      "web": {
+        "name": "Browser",
+        "note": "Nothing to install",
+        "action": "Open web version"
+      }
+    },
+    "windowsTip": "If Windows says “Windows protected your PC”, click “More info” → “Run anyway”. This happens with apps from small developers.",
+    "allPlatforms": "All platforms",
+    "yours": "Your system"
   }
 }
